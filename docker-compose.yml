@@ -26,6 +26,12 @@ services:
     volumes:
       - /app/node_modules
       - ./backend:/app
+    environment:
+      - MYSQL_HOST : mysql
+      - MYSQL_USER : root
+      - MYSQL_ROOT_PASSWORD: root1234
+      - MYSQL_DATABASE: myapp
+      - MYSQL_PORT: 3306
 
 # AWS RDS 이용에 따른 주석 처리(내부 On-Premise mysql 이용시 해당하는거 설정하면 된다)
   # mysql:

@@ -22,3 +22,16 @@ after_success:
   - docker push -t blueraint/docker-backend
   - docker push -t blueraint/docker-nginx
   
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "docker-fullstack-app"
+  env: "Dockerfullstackapp-env"
+  bucket_name: "elasticbeanstalk-ap-northeast-2-971433154392"
+  bucket_path: "docker-fullstack-app"
+  on:
+    branch: master
+
+# AWS 연동시 api-key (access-key 및 secret-key)는 노출되지 않아야 하므로 여기서는 travis -> options -> settings -> env variables에 세팅하여 이용한다 
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY 
