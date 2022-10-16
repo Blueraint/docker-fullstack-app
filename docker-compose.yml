@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile.dev
       context: ./frontend
     volumes:
-      - /app/node_mouldes
+      - /app/node_modules
       - ./frontend:/app
     stdin_open: true
 
