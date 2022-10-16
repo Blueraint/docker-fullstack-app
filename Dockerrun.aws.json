@@ -1,4 +1,4 @@
- {
+{
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
@@ -26,8 +26,8 @@
                     "containerPort": 80
                 }
             ],
-            "links": ["frontend","backend"],
+            "links": ["frontend", "backend"],
             "memory": 128
         }
     ]
- }
+}
